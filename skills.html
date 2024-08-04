@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mt.Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/logo.png">
+</head>
+<body>
+<header >
+    <nav class="navbar" aria-label="Primary">
+        <a href="./index.html">
+            <img class="logo" src="./images/logo.png" alt="logo" >
+            </a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="./my journey.html" class="nav-link">My Journey</a>
+            </li>
+            <li>
+                <a href="./skills.html" class="nav-link">Skills</a>
+            </li>
+            <li>
+                <a href="./portfolio.html" class="nav-link">Portfolio</a>
+            </li>
+            <li>
+                <a href="./contacts.html" class="nav-link">Contacts</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div> 
+    </nav>   
+</header> 
+
+<section class="skills">
+    <h1>Skills:</h1>
+    <div class="skills-logo">
+        <img src="./images/html-logo.png" alt="HTML logo">
+        <img src="./images/CSS-Logo.png" alt="CSS logo">
+        <img src="./images/JavaScript-Logo.png" alt="HTML logo">
+    </div>
+</section>
+
+<footer>
+    <a href="https://instagram.com/marinat_au"
+    title="Me on Instagram">
+    <img class="social-icons"   src="./images/insta-logo.png" alt="The Instagram logo: a rounded square camera with a purple-orange gradient filling the lines" />   
+    </a>
+    <a href="https://github.com/marina-terina"
+    title="Me on GitHub">
+    <img class="social-icons"   src="./images/github.svg" alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm" />     
+    </a>
+    <a href="https://www.linkedin.com/in/marina-terina-b73848150/"
+    title="Me on LinkedIn">
+    <img class="social-icons"   src="./images/linkedin-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
+    </a>
+    <a href="https://app.slack.com/client/T9QRX4NTA/C07A04BKUDU"
+    title="Me on Slack">
+    <img class="social-icons"   src="./images/slack-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
+    </a>
+</footer> 
+
+<script >
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+hamburger.classList.remove("active");
+navMenu.classList.remove("active");
+}))
+</script>
+</body>
