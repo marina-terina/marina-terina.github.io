@@ -1305,5 +1305,9 @@ display: flex;
             padding-left: 0.5rem;
         }
 
+        .portfolio-container {
+            padding: 1rem 0;
+        }
+
         
     }
