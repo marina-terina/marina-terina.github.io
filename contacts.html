@@ -6,79 +6,110 @@
     <title>mt.Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<header >
-    <nav class="navbar" aria-label="Primary">
-        <a href="./index.html">
-            <img class="logo" src="./images/logo.png" alt="logo" >
+<header id="navbar"></header>
+
+<div class="container">
+    <section id="contact" class="contact-section">
+        <h3 class="section-title">Get in Touch</h3>
+        
+        <p class="contact-text">
+            I'm always open for <span class="contact-highlight">collaborations</span> and <span class="contact-highlight">feedback</span>! If you'd like to talk about code, traveling, food, wine, art, or anything in between — I'd love to connect with you!
+        </p>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/marina-terina/" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <span class="social-name">LinkedIn</span>
             </a>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="./journey.html" class="nav-link">My Journey</a>
-            </li>
-            <li class="nav-item">
-                <a href="./skills.html" class="nav-link">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a href="./portfolio.html" class="nav-link">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a href="./contacts.html" class="nav-link">Contacts</a>
-            </li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div> 
-    </nav>   
-</header> 
-<section class="contact-form">
-    <h2>Get in Touch</h2>
-    <form class="contact-input">
-        <label for="your-name">Your Name</label>
-        <input type="text" id="your-name">
-        <label for="your-name">Your e-mail</label>
-        <input type="text" id="your e-mail">
-        <label for="message">Your message</label>
-        <textarea name="message-text" id="message" rows="10">Hey Marina,</textarea>
-        <input type="submit" value="submit" class="btn-primary">   
-    </form>
-</section>
+            
+            <a href="https://github.com/marina-terina" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <span class="social-name">GitHub</span>
+            </a>
+            <a href="https://shecodesaus.slack.com/team/U07B29FUT7F" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <i class="fab fa-slack"></i>
+                </div>
+                <span class="social-name">Slack</span>
+            </a>
+            <a href="mailto:marinat@outlook.com.au" class="social-link">
+                <div class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="social-name">Email</span>
+            </a>
+
+            
+            <a href="https://www.instagram.com/marinat_au/" target="_blank" class="social-link">
+                <div class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <span class="social-name">Instagram</span>
+            </a>
+            
+        </div>
+        
+    </section>
+    
+</div>
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        function loadHeader() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const header = doc.querySelector("header");
+                    document.querySelector("#navbar").innerHTML = header.innerHTML;
 
-<footer>
-    <a href="https://instagram.com/marinat_au"
-    title="Me on Instagram">
-    <img class="social-icons"   src="./images/insta-logo.png" alt="The Instagram logo: a rounded square camera with a purple-orange gradient filling the lines" />   
-    </a>
-    <a href="https://github.com/marina-terina"
-    title="Me on GitHub">
-    <img class="social-icons"   src="./images/github.svg" alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm" />     
-    </a>
-    <a href="https://www.linkedin.com/in/marina-terina-b73848150/"
-    title="Me on LinkedIn">
-    <img class="social-icons"   src="./images/linkedin-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-    <a href="https://app.slack.com/client/T9QRX4NTA/C07A04BKUDU"
-    title="Me on Slack">
-    <img class="social-icons"   src="./images/slack-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-</footer> 
-<script >
-    const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+                 
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navList = document.querySelector('.desktop-bar ul');
 
-hamburger.addEventListener("click", () => {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
-})
+                    if (menuToggle && navList) {
+                        menuToggle.addEventListener('click', function() {
+                            this.classList.toggle('active');
+                            navList.classList.toggle('active');
+                        });
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-hamburger.classList.remove("active");
-navMenu.classList.remove("active");
-}))
+                        document.querySelectorAll('.desktop-bar a').forEach(link => {
+                            link.addEventListener('click', () => {
+                                menuToggle.classList.remove('active');
+                                navList.classList.remove('active');
+                            });
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+
+        function loadFooter() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const footer = doc.querySelector("footer");
+                    document.querySelector("#footer").innerHTML = footer.innerHTML;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+
+        
+        loadHeader();
+        loadFooter();
+    });
 </script>
+
 </body>

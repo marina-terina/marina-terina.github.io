@@ -6,133 +6,486 @@
     <title>mt.Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-<header >
-    <nav class="navbar" aria-label="Primary">
-        <a href="./index.html">
-            <img class="logo" src="./images/logo.png" alt="logo" >
-            </a>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="./journey.html" class="nav-link">My Journey</a>
-            </li>
-            <li class="nav-item">
-                <a href="./skills.html" class="nav-link">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a href="./portfolio.html" class="nav-link">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a href="./contacts.html" class="nav-link">Contacts</a>
-            </li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div> 
-    </nav>   
-</header> 
+<header id="navbar"></header>
 <section class="article-container">
     <div class="article">
-        <img class="article-image" src="./images/MyPhoto.png"   alt="My photo">  
-        <p>
-            Hi! <br> I'm Marina. Junior Web Developer<br>
-            I come from a small town in northwest Belarus, 
-            always dreaming big and wanting to explore. 
-            My ambitions took me to Moscow, Russia, where
-            I graduated from a top law school. I always wanted 
-            to travel, which is how I ended up in the aviation 
-            industry. I traveled the world and found my home in
-            beautiful Australia. During the lockdown, when we 
-            were all stuck at home, I tried to entertain myself
-            with online courses, many of which had suddenly 
-            become free. I discovered my passion for coding and
-            wrote my first <span class="Hello"> "Hello World."</span> 
-            <br>That's how it all began...
-            <br>
-            <br>Currently, I am a proud student of the 
-            She Codes Plus Brisbane program and a member of the
-            wonderful She Codes Australia community. 
-            During the program, I will learn HTML, CSS, JavaScript, React, Django, and many more. 
-            I can't wait to fill out my skills section with more icons and my portfolio with more exciting projects. Each project is a unique opportunity to learn new skills and create something useful for the world.
-            <br><br><br><span class="Hello">Fun fact about me:</span> I have visited over 40 countries.
-            <br><span class="Hello">Boring fact about me:</span> I love classical music.
-        </p>
+        <img class="article-image" src="./images/Me_Side.png"   alt="My photo">  
+        <div class="about-text">
+            <h3 class="section-title">Hello!</h3>
+            <p>I’m Marina, a passionate junior web developer with a love for creating innovative digital solutions—and sometimes, it just works! I'm a perfect blend of Belarusian dedication, Russian resilience, and Aussie spirit. I bring creativity, determination, and a collaborative approach to every project and place I work. Whether it’s building interactive websites, dynamic web applications, or designing seamless user experiences, my goal is to turn complex challenges into simple, effective solutions.</p>
+            <p>My journey in web development began when I discovered the power of code to bring creative ideas to life. I've since developed a strong foundation in both frontend and backend technologies, allowing me to build complete web applications.</p>
+            <p>I believe that great websites are not just about code – they're about creating meaningful experiences. I approach each project with attention to detail, clean code practices, and a focus on user experience.</p>
+        </div>
+        <div class="tab-navigation">
+            <button class="tab-link active" data-tab="education">Education</button>
+            <button class="tab-link" data-tab="experience">Experience</button>
+            <button class="tab-link" data-tab="skills">Skills</button>
+            <button class="tab-link" data-tab="personal">About Me</button>
+        </div>
         
-</div>    
-</section>
-<section class="skills">
-    <h1>Skills:</h1>
-    <div class="skills-logo">
-        <img src="./images/html-logo.png" alt="HTML logo">
-        <img src="./images/CSS-Logo.png" alt="CSS logo">
-        <img src="./images/JavaScript-Logo.png" alt="HTML logo">
+                  <!-- Education  -->
+        <div id="education" class="tab-content">
+        <div class="Education-section" id="education">
+            <h3 class="section-title">Education & Certifications</h3>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024-2025</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Web Development Bootcamp</h3>
+                        <h4>She Codes Plus Brisbane</h4>
+                        <p>Intensive 6 month program covering frontend and backend web development.</p>
+                        <ul class="bullet-list">
+                            <li>HTML, CSS, JavaScript, React</li>
+                            <li>Python, Django, REST API development</li>
+                            <li>Git (Version control, branching, merging, handling pull requests)</li>
+                            <li>Deployment and DevOps basics</li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Diploma of Information Technology (Front-end & Back-end Web Development)</h3>
+                        <h4>TAFE Queensland</h4>
+                        <p>Completed coursework in front-end and back-end web development, with a strong emphasis on practical skills, coding standards, and industry best practices.</p>
+                        <ul class="bullet-list">   
+                            <li>HTML & CSS: Front-end Web Development Basics</li>
+                            <li>PHP: Server-Side Scripting & Web Applications</li>
+                            <li>MySQL & NoSQL: Database Management and Queries</li>
+                            <li>Full-Stack Web Development Fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2011-2012</div>
+                    <div class="timeline-content">
+                        <h3>Diploma in Human Resource Management</h3>
+                        <h4>Lomonosov Moscow State University</h4>
+                        <p>Completed coursework in human resource management, focusing on employee relations, organisational behaviour, and HR strategies to improve business performance and workplace culture.</p>
+                            <ul class="bullet-list">
+                                <li>Employee Relations: Understanding workplace dynamics and conflict resolution</li>
+                                <li>HR Strategies: Designing and implementing effective human resource practices</li>
+                                <li>Organisational Behaviour: Insights into managing teams and fostering a positive work environment</li>
+                                <li>Workplace Policies: Developing and maintaining policies that support business goals</li>
+                            </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2011-2012</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Law</h3>
+                        <h4>Russian Law Academy of the Ministry of Justice</h4>
+                        <p>Completed coursework in various areas of law, with a focus on legal principles, statutes, and judicial practices. Recognised by the QLD Overseas Qualification Unit Department.</p>
+                            <ul class="bullet-list">
+                                <li>Constitutional Law: Understanding the framework of government and legal systems</li>
+                                <li>Criminal Law: Studying legal processes, procedures, and criminal justice systems</li>
+                                <li>Contract Law: Learning the legal aspects of business agreements and obligations</li>
+                                <li>International Law: Exploring global legal systems and treaties</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div id="experience" class="tab-content"
+        <div class="Work Experience" id="work-experience"> 
+            <h3 class="section-title">Work Experience</h3>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Owner & Digital Solutions Developer</h3>
+                        <h4>iTyres & iWear</h4>
+                        <p>As the owner of iTyres and iWear, I have primarily focused on the development and maintenance of two company websites while also handling marketing and business operations. I ensure the websites are fully functional, user-friendly, and aligned with the business objectives, focusing on creating a strong online presence and engaging customer experience.</p>
+                        <ul class="bullet-list">
+                            <li>Implemented and maintained two company websites, ensuring a seamless user experience and functionality</li>
+                            <li>Focused on the front-end and back-end web development aspects, using modern web technologies</li>
+                            <li>Managed digital marketing strategies, including social media and online advertising campaigns</li>
+                            <li>Optimised website performance, user interface, and customer engagement</li>
+                            <li>Worked with various e-commerce and web tools to integrate services and enhance business operations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024-2025</div>
+                    <div class="timeline-content">
+                        <h3>Human Resources Administrator (contract)</h3>
+                        <h4>Nauru Airlines</h4>
+                        <p>Blending technical skills and strong communication with airline industry knowledge to assist in implementing an HRIS system for over 500 employees across 4 locations in 2 countries.</p>
+                        <ul class="bullet-list">
+                            <li>Assisted in implementing and managed HRIS system for company-wide integration</li>
+                            <li>Optimised HR operations by streamlining employee data management, enhancing workflows, and improving overall efficiency.</li>
+                            <li>Supported recruitment, onboarding, and offboarding processes</li>
+                            <li>Collaborated across departments to streamline HR operations</li>
+                            <li>Ensured compliance with company policies and aviation regulations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2019-2024</div>
+                    <div class="timeline-content">
+                        <h3>Optical Dispenser</h3>
+                        <h4>Specsavers Optical Store</h4>
+                        <p>After moving to Australia, leveraged excellent communication skills and quick learning abilities to master optical dispensing knowledge and deliver top-notch customer support. Highly adaptable to new environments and procedures, ensuring effective service in providing vision solutions.</p>
+                            <ul class="bullet-list">
+                                <li>Conducted pre-screening assessments for patients</li>
+                                <li>Provided optical dispensing, fitting, and troubleshooting services for glasses and contact lenses</li>
+                                <li>Collaborated with optometrists to deliver accurate lenses for glasses and contact lenses</li>
+                                <li>Ensured high customer satisfaction through attentive service and product recommendations</li>
+                                <li>Learned and applied new tools and software systems to improve workflow and enhance service delivery</li>
+                            </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017-2019</div>
+                    <div class="timeline-content">
+                        <h3>Administrative Assistant</h3>
+                        <h4>Kitchech Remedy</h4>
+                        <p>After moving to Australia, I applied my strong communication and organisational skills to support day-to-day administrative tasks. I assisted with coordinating office operations, managing schedules, and ensuring smooth office functions across multiple locations.</p>
+                        <ul class="bullet-list">
+                            <li>Managed daily administrative tasks to ensure smooth office operations</li>
+                            <li>Worked between 8 stores to ensure ordered and displayed products met company quality and presentation standards</li>
+                            <li>Coordinated meetings, appointments, and office events</li>
+                            <li>Supported team members in various administrative and clerical tasks</li>
+                            <li>Assisted with recruiting and onboarding, including staff training</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2008-2016</div>
+                    <div class="timeline-content">
+                        <h3>Shift Supervisor – Transit and Transfer Area</h3>
+                        <h4>Aeroflot Russian Airlines</h4>
+                        <p>Began as a Passenger Service Agent and transitioned into a Shift Supervisor role responsible for overseeing flight operations at three international terminals.</p>
+                        <ul class="bullet-list">
+                            <li>Managed flight monitoring, passenger transfers, and services at multiple terminals</li>
+                            <li>Provided assistance to passengers facing flight disruptions, delays, and missed connections</li>
+                            <li>Coordinated with ground and air staff to ensure smooth transitions between flights</li>
+                            <li>Utilised industry-specific software to streamline daily operations and improve team efficiency</li>
+                            <li>Trained and mentored new team members, fostering a high level of customer service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Skills -->
+        <div id="skills" class="tab-content">
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="professional-skills">
+                        <div class="prof-skill-item">
+                            <h4>Communication</h4>
+                            <p>Professional interaction with all levels of staff, creating strong connections within teams and clients. Experienced in liaising with people from different cultures and backgrounds.</p>
+                        </div>
+                        <div class="prof-skill-item">
+                            <h4>Organisation</h4>
+                            <p>Excellent time management, ability to prioritise tasks, and high attention to detail enable effective work under pressure and meeting deadlines.</p>
+                        </div>
+                        <div class="prof-skill-item">
+                            <h4>Interpersonal</h4>
+                            <p>Always polite and well-presented with a positive attitude and good sense of humour, creating a safe and friendly environment.</p>
+                        </div>
+                        <div class="prof-skill-item">
+                            <h4>Adaptability</h4>
+                            <p>High level of adaptability and flexibility with fast learning abilities. Easily adapts to changes and new ways of working, quickly improving skillsets to grasp opportunities.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title">Technical Skills</h3>
+    
+    <div class="skills-intro">
+        <p>These are technologies I'm familiar with at a junior level. I'm constantly learning and improving my skills in each of these areas, with some being more developed than others.</p>
     </div>
-</section>
-<section class="portfolio">
-    <h2>Portfolio</h2>
-    <article class="portfolio-project">
-        <img src="./images/ABC Project.png" alt="ABC optical store Logo">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cum consectetur quae odit ratione? 
-        Magni dignissimos fugit molestiae, vitae obcaecati facere eum consequatur suscipit iure sequi architecto 
-        nostrum aspernatur harum?
-        <a href="">visit website</a>
-        </p>
-    </article>
-    <article class="portfolio-project">
-        <img src="/images/Gym.png" alt="Street Gym">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cum consectetur quae odit ratione? 
-        Magni dignissimos fugit molestiae, vitae obcaecati facere eum consequatur suscipit iure sequi architecto 
-        nostrum aspernatur harum?
-        <a href="">visit website</a>
-        </p>
-    </article>
-</section>
-<section class="contact-form">
-    <h2>Get in Touch</h2>
-    <form class="contact-input">
-        <label for="your-name">Your Name</label>
-        <input type="text" id="your-name">
-        <label for="your-name">Your e-mail</label>
-        <input type="text" id="your e-mail">
-        <label for="message">Your message</label>
-        <textarea name="message-text" id="message" rows="10">Hey Marina,</textarea>
-        <input type="submit" value="submit" class="btn-primary">   
-    </form>
-</section>
-<footer>
-    <a href="https://instagram.com/marinat_au"
-    title="Me on Instagram">
-    <img class="social-icons"   src="./images/insta-logo.png" alt="The Instagram logo: a rounded square camera with a purple-orange gradient filling the lines" />   
-    </a>
-    <a href="https://github.com/marina-terina"
-    title="Me on GitHub">
-    <img class="social-icons"   src="./images/github.svg" alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm" />     
-    </a>
-    <a href="https://www.linkedin.com/in/marina-terina-b73848150/"
-    title="Me on LinkedIn">
-    <img class="social-icons"   src="./images/linkedin-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-    <a href="https://app.slack.com/client/T9QRX4NTA/C07A04BKUDU"
-    title="Me on Slack">
-    <img class="social-icons"   src="./images/slack-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-</footer> 
+    
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-bootstrap-plain colored"></i>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-django-plain"></i>
+                    <span>Django</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-php-plain colored"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-laravel-plain colored"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-wordpress-plain"></i>
+                    <span>WordPress</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-mysql-plain colored"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-mongodb-plain colored"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-postgresql-plain colored"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-redis-plain colored"></i>
+                        <span>NoSQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Tools & Testing</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-github-original"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-vscode-plain colored"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-npm-original-wordmark colored"></i>
+                        <span>Postman</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-chrome-plain colored"></i>
+                        <span>Insomnia</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Deployment & DevOps</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-heroku-original colored"></i>
+                        <span>Heroku</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-amazonwebservices-original colored"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-netlify-plain colored"></i>
+                        <span>Netlify</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-<script >
-    const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+        <!-- About Me -->
+        <div id="personal" class="tab-content">
+            <div class="personal-section">
+                <h3 class="section-title">About Me</h3>
+                
+                <div class="personal-story">
+                    <p>I come from a small town in northwest Belarus, always dreaming big and eager to explore. My ambitions took me to Moscow, Russia, where I graduated from a top law school. But I've always had the travel bug, which is how I found myself in the aviation industry, flying all over the world. Eventually, I made Australia my home—and I couldn't be happier!</p>
+                    
+                    <p>My settlement in this new country coincided with the lockdown, which turned out to be quite the rollercoaster ride. While the world was figuring things out, I found myself exploring online courses—many of which were suddenly available for free. Little did I know that one of those courses would ignite my passion for coding. I'll never forget writing my first "Hello World" and thinking, "Wait, I'm onto something here!</p>
+                    
+                    <p>While we were all stuck at home, I focused on helping our family business grow. As I dove deeper into managing things, I realised that the tech skills I had been picking up were becoming more and more useful. The need for digital solutions was undeniable.</p>
+                    <p>With a growing curiosity for learning, I decided to turn that energy into something more concrete and enrolled in a Diploma in IT at TAFE Queensland. Shortly after, I joined the She Codes Australia community, which has been an incredible source of inspiration and growth.</p>
+                    <p>And that's how it all began... Or maybe, it's just the beginning now... 😉</p>
+                </div>
+                
+                <div class="personal-highlights">
+                    <div class="highlight-card">
+                        <h4>Philosophy</h4>
+                        <blockquote class="personal-quote">
+                            "Nothing is impossible, it's just a challenge."
+                        </blockquote>
+                        <p>This mindset drives me to push boundaries, embrace new experiences, and tackle whatever life throws my way with creativity and determination.</p>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <h4>Life Journey</h4>
+                        <ul class="bullet-list">
+                            <li>Traveled to over 40 countries, embracing new cultures and experiences</li>
+                            <li>Studied law and worked in various industries before transitioning to tech</li>
+                            <li>Made Australia my home after years of global exploration, arriving with nothing but a dream, 2 suitcases, and my little daughter</li>
+                            <li>Joined the She Codes Plus program to refine my web development skills</li>
+                            <li>Embraced a continuous learning mindset with a can-do attitude and an open mind</li>
+                            <li>Currently focusing on developing family businesses to make Aussie life easier and fuel their outdoor adventures</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <h4>Hobbies & Interests</h4>
+                        <ul class="bullet-list">
+                            <li>Travelling – constantly seeking new adventures and exploring the world</li>
+                            <li>Wine and food enthusiast – my greatest weakness (but who's counting?)</li>
+                            <li>Enjoying outdoor activities and adventure sports to embrace the Aussie spirit</li>
+                            <li>Experimenting with personal projects to sharpen my coding skills and boost creativity</li>
+                            <li>Creating engaging videos for social media promotions and storytelling</li>
+                            <li>Immersing myself in theater and classical music concerts to nurture my love for the arts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
 
-hamburger.addEventListener("click", () => {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
-})
+    
+</section>
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-hamburger.classList.remove("active");
-navMenu.classList.remove("active");
-}))
+<footer id="footer"></footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.replaceWith(link.cloneNode(true));
+        });
+        
+        // Set education tab as active by default
+        const educationTab = document.querySelector('[data-tab="education"]');
+        const educationContent = document.getElementById('education');
+        
+        if (educationTab && educationContent) {
+            educationTab.classList.add('active');
+            educationContent.classList.add('active');
+        }
+        
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function() {
+                // Only proceed if clicking a different tab than the current active one
+                if (!this.classList.contains('active')) {
+                    document.querySelectorAll('.tab-link').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    const tabId = this.getAttribute('data-tab');
+                    const content = document.getElementById(tabId);
+                    
+                    if (content) {
+                        content.classList.add('active');
+                    } else {
+                        console.error('No content found with ID:', tabId);
+                    }
+                }
+            });
+        });
+
+        // Header and Footer loading with mobile menu functionality
+        function loadHeader() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const header = doc.querySelector("header");
+                    document.querySelector("#navbar").innerHTML = header.innerHTML;
+
+                    // Initialize mobile menu after header is loaded
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navList = document.querySelector('.desktop-bar ul');
+
+                    if (menuToggle && navList) {
+                        menuToggle.addEventListener('click', function() {
+                            this.classList.toggle('active');
+                            navList.classList.toggle('active');
+                        });
+
+                        document.querySelectorAll('.desktop-bar a').forEach(link => {
+                            link.addEventListener('click', () => {
+                                menuToggle.classList.remove('active');
+                                navList.classList.remove('active');
+                            });
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+
+        function loadFooter() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const footer = doc.querySelector("footer");
+                    document.querySelector("#footer").innerHTML = footer.innerHTML;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+
+        // Load header and footer
+        loadHeader();
+        loadFooter();
+    });
 </script>
+
 </body>
