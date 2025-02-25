@@ -4,77 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mt.Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/logo.png">
 </head>
 <body>
-<header >
-    <nav class="navbar" aria-label="Primary">
-        <a href="./index.html">
-            <img class="logo" src="./images/logo.png" alt="logo" >
-            </a>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="./journey.html" class="nav-link">My Journey</a>
-            </li>
-            <li class="nav-item">
-                <a href="./skills.html" class="nav-link">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a href="./portfolio.html" class="nav-link">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a href="./contacts.html" class="nav-link">Contacts</a>
-            </li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div> 
-    </nav>   
-</header> 
 
+<header id="navbar"></header>
 <section class="skills">
-    <h1>Skills:</h1>
-    <div class="skills-logo">
-        <img src="./images/html-logo.png" alt="HTML logo">
-        <img src="./images/CSS-Logo.png" alt="CSS logo">
-        <img src="./images/JavaScript-Logo.png" alt="HTML logo">
+    <h1 class="section-title">Skills</h1>
+    <div class="skills-intro">
+        <p>These are technologies I'm familiar with at a junior level. I'm constantly learning and improving my skills in each of these areas, with some being more developed than others.</p>
+    </div>
+    
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-bootstrap-plain colored"></i>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-django-plain"></i>
+                    <span>Django</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-php-plain colored"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-laravel-plain colored"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-wordpress-plain"></i>
+                    <span>WordPress</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-redis-plain colored"></i>
+                    <span>NoSQL</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Tools & Testing</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-github-original"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-vscode-plain colored"></i>
+                    <span>VS Code</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-npm-original-wordmark colored"></i>
+                    <span>Postman</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-chrome-plain colored"></i>
+                    <span>Insomnia</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Deployment & DevOps</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-heroku-original colored"></i>
+                    <span>Heroku</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-amazonwebservices-original colored"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-netlify-plain colored"></i>
+                    <span>Netlify</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<footer>
-    <a href="https://instagram.com/marinat_au"
-    title="Me on Instagram">
-    <img class="social-icons"   src="./images/insta-logo.png" alt="The Instagram logo: a rounded square camera with a purple-orange gradient filling the lines" />   
-    </a>
-    <a href="https://github.com/marina-terina"
-    title="Me on GitHub">
-    <img class="social-icons"   src="./images/github.svg" alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm" />     
-    </a>
-    <a href="https://www.linkedin.com/in/marina-terina-b73848150/"
-    title="Me on LinkedIn">
-    <img class="social-icons"   src="./images/linkedin-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-    <a href="https://app.slack.com/client/T9QRX4NTA/C07A04BKUDU"
-    title="Me on Slack">
-    <img class="social-icons"   src="./images/slack-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-</footer> 
+<footer id="footer"></footer>
 
-<script >
-    const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", () => {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
-})
-
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-hamburger.classList.remove("active");
-navMenu.classList.remove("active");
-}))
+<script>
+    function loadHTML(target, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector(target).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML("#navbar", "header-footer.html");
+    loadHTML("#footer", "header-footer.html");
 </script>
 </body>

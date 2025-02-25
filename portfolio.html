@@ -3,88 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mt.Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/logo.png">
 </head>
 <body>
-<header >
-    <nav class="navbar" aria-label="Primary">
-        <a href="./index.html">
-            <img class="logo" src="./images/logo.png" alt="logo" >
-            </a>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="./journey.html" class="nav-link">My Journey</a>
-            </li>
-            <li class="nav-item">
-                <a href="./skills.html" class="nav-link">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a href="./portfolio.html" class="nav-link">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a href="./contacts.html" class="nav-link">Contacts</a>
-            </li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div> 
-    </nav>   
-</header> 
+    <header id="navbar"></header>
 
-<section class="portfolio">
-    <h2>Portfolio</h2>
-    <article class="portfolio-project">
-        <img src="./images/ABC Project.png" alt="ABC optical store Logo">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cum consectetur quae odit ratione? 
-        Magni dignissimos fugit molestiae, vitae obcaecati facere eum consequatur suscipit iure sequi architecto 
-        nostrum aspernatur harum?
-        <a href="">visit website</a>
-        </p>
-    </article>
-    <article class="portfolio-project">
-        <img src="/images/Gym.png" alt="Street Gym">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cum consectetur quae odit ratione? 
-        Magni dignissimos fugit molestiae, vitae obcaecati facere eum consequatur suscipit iure sequi architecto 
-        nostrum aspernatur harum?
-        <a href="">visit website</a>
-        </p>
-    </article>
-</section>
+    <div class="portfolio-container">
+        <div class="portfolio-intro">
+            <h3>My Projects</h3>
+            <p>Click on any project to see more details.</p>
+        </div>
 
-<footer>
-    <a href="https://instagram.com/marinat_au"
-    title="Me on Instagram">
-    <img class="social-icons"   src="./images/insta-logo.png" alt="The Instagram logo: a rounded square camera with a purple-orange gradient filling the lines" />   
-    </a>
-    <a href="https://github.com/marina-terina"
-    title="Me on GitHub">
-    <img class="social-icons"   src="./images/github.svg" alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm" />     
-    </a>
-    <a href="https://www.linkedin.com/in/marina-terina-b73848150/"
-    title="Me on LinkedIn">
-    <img class="social-icons"   src="./images/linkedin-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-    <a href="https://app.slack.com/client/T9QRX4NTA/C07A04BKUDU"
-    title="Me on Slack">
-    <img class="social-icons"   src="./images/slack-logo.png" alt="The Slack logo: a colorful deconstructed hashtag" />    
-    </a>
-</footer> 
-<script >
-    const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+        <div class="projects-grid">
+            <!-- Project 1 - MLStrength Gym -->
+            <div class="project-card">
+                <div class="project-front">
+                    <img src="./images/Gym.png" alt="MLStrength Gym screenshot" class="project-image">
+                    <div class="project-title">MLStrength Gym (Learning Project)</div>
+                    <div class="front-tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <h3 class="back-title">MLStrength Gym (Learning Project)</h3>
+                    <div class="project-details">
+                        <h5>Project Goal</h5>
+                        <p>This learning project was one of my first, where I created a 5-page website for a fictional business, MLStrength Gym. The goal was to practice connecting multiple pages and applying advanced layout techniques such as Flexbox and Grid. I also focused on creating interactive forms and a timetable, which would simulate the gym's offerings. Additionally, I ensured the website was responsive and incorporated a functional hamburger menu for the mobile version to enhance the user experience.</p>
+                        
+                        <h5>Implementation</h5>
+                        <p>I developed a 5-page website using HTML and CSS, incorporating Flexbox and Grid for layout. The pages included Home, Classes, Timetable, Membership, and Contact. I also added interactive elements, such as a membership sign-up form and a dynamic timetable.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">Live Demo</a>
+                            <a href="#" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-hamburger.addEventListener("click", () => {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
-})
+            <div class="project-card">
+                <div class="project-front">
+                    <img src="./images/my_portfolio.png" alt="My Portfolio screenshot" class="project-image">
+                    <div class="project-title">My Portfolio</div>
+                    <div class="front-tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <h3 class="back-title">My Portfolio</h3>
+                    <div class="project-details">
+                        <h5>Project Goal</h5>
+                        <p>The goal of my personal portfolio is to showcase my skills, experience, and projects as a junior web developer. It serves as an online space to highlight my work, demonstrate my web development capabilities, and offer potential clients or employers insight into my abilities. Additionally, this portfolio is an ongoing project where I continuously experiment with design patterns and best practices, polishing my skills as I develop it further. I see it as a dynamic platform that will grow alongside my progress as a developer. By regularly updating and refining it, I am able to keep track of my journey and improvements over time.</p>
+                        
+                        <h5>Implementation</h5>
+                        <p>For this project, I focused on building a fully responsive design using HTML, CSS, and JavaScript. The portfolio includes sections for my bio, skills, work experience, and projects, along with dynamic animations and smooth transitions to enhance the overall user experience. The site is also hosted on GitHub Pages for easy deployment and access.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">Live Demo</a>
+                            <a href="https://github.com/marina-terina/my_first_website" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-hamburger.classList.remove("active");
-navMenu.classList.remove("active");
-}))
+            <div class="project-card">
+                <div class="project-front">
+                    <img src="./images/Kickaroo.png" alt="Kickaroo screenshot" class="project-image">
+                    <div class="project-title">Kickaroo (Learning Project)</div>
+                    <div class="front-tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Heroku</span>
+                        <span class="tech-tag">Netlify</span>
+                    </div>
+                    
+                </div>
+                <div class="project-back">
+                    <h3 class="back-title">Kickaroo (Learning Project)</h3>
+                    <div class="project-details">
+                        <h5>Project Goal</h5>
+                        <p>Kickaroo is a crowdfunding platform for travellers who dream of exploring the world's most incredible destinations. The platform allows travellers to raise funds for their journeys by offering exclusive content and benefits to those who pledge support. The project combines front-end and back-end development to provide a seamless experience for both travellers and supporters.</p>
+                        
+                        <h5>Implementation</h5>
+                        <p>For Kickaroo, I used Django for the back-end and React for the front-end. The platform allows travellers and supporters to create profiles, share trip details, and offer or fund contributions. Funders can choose whether to accept benefits in exchange for their support, and they have the option to make anonymous contributions.
+
+                        Travellers can create, modify, and delete their projects, while supporters can post comments and engage with the content. The dynamic user dashboard provides an overview of all pledged funds and projects.
+                        
+                        A key feature is the dynamic progress bar, which visually tracks the percentage of funds pledged and the current project status. The design is modern, fully responsive, and optimised for a smooth user experience across devices.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">Git Version Control</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Insomnia</span>
+                            <span class="tech-tag">Heroku</span>
+                            <span class="tech-tag">Netlify</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://kickaroo.netlify.app/" target="_blank" class="project-link">Live Demo</a>
+                            <a href="https://github.com/marina-terina/Crowdfunding-Front-End" target="_blank" class="project-link">GitHub Front-end</a>
+                            <a href="https://github.com/marina-terina/crowdfunding_back_end" target="_blank" class="project-link">GitHub Back-end</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-front">
+                    <img src="./images/Stickybloom.png" alt="Stickybloom screenshot" class="project-image">
+                    <div class="project-title">Stickybloom (Group Project)</div>
+                    <div class="front-tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Heroku</span>
+                        <span class="tech-tag">Netlify</span>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <h3 class="back-title">Stickybloom (Group Project)</h3>
+                    <div class="project-details">
+                        <h5>Project Goal</h5>
+                        <p>Stickybloom was a group project where we recreated a real-life development scenario. Our client needed a modern platform to complement their workshops. The platform's goal was to allow users to post and read notes during workshops, with a unique UUID login system for each session. Users could interact based on the dynamic status of the workshop, such as upcoming, in progress, or closed.</p>
+                        
+                        <h5>Implementation</h5>
+                        <p>As a full-stack developer, I worked on both the front-end and back-end development of Stickybloom. The platform features a login system with a unique UUID code for each workshop, allowing participants to join specific sessions. I implemented a real-time timer to display the dynamic workshop status, showing whether the workshop was "upcoming", "in progress", or "closed". I also developed the admin dashboard, where administrators can create, delete, or update workshops, manage users, and view all the notes. Admins can also copy the UUID code for easy sharing. The design is bright, colourful, and responsive, ensuring the platform is both user-friendly and mobile-friendly across devices. As part of this group project, we practised Git branching, merging, and pull request management, handling conflicts and ensuring that our codebase remained organised and functional throughout the project lifecycle.</p>
+                        
+                        <h5>Access the project</h5>
+                        <p>If you'd like to visit the Stickybloom website, you can create your own account and use the workshop code 100 to enter the workshop. For a brief look, feel free to use the following credentials:</p>
+                        <ul>
+                            <li>Username: user1</li>
+                            <li>Password: user1</li>
+                            <li>Workshop code: 100</li>
+                        </ul>
+                        <p>For admin access, please use the following:</p>
+                        <ul>
+                            <li>Username: superuser</li>
+                            <li>Password: superuser</li>
+                        </ul>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">Git Version Control</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Insomnia</span>
+                            <span class="tech-tag">Heroku</span>
+                            <span class="tech-tag">Netlify</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://stickybloom.netlify.app/" target="_blank" class="project-link">Live Demo</a>
+                            <a href="#" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-front">
+                    <img src="./images/iTyres.png" alt="iTyres screenshot" class="project-image">
+                    <div class="project-title">iTyres</div>
+                    <div class="front-tech-tags">
+                        <span class="tech-tag">OpenCart</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <h3 class="back-title">iTyres</h3>
+                    <div class="project-details">
+                        <h5>Project Goal</h5>
+                        <p>iTyres is a well-established business focused on providing a seamless, user-friendly online shopping experience for tyres and automotive accessories. The goal of iTyres is to provide customers with a seamless, user-friendly online shopping experience for tyres and automotive accessories. The business aims to offer high-quality products, excellent customer service, and a smooth platform where users can easily browse, order, and have products delivered. By collaborating with web developers, the goal is to keep the platform running smoothly, ensure efficient management of the online store, and continuously enhance the user experience to drive growth and customer satisfaction.</p>
+                        
+                        <h5>Implementation</h5>
+                        <p>Currently, in collaboration with senior web developers, we are working on major updates to improve the iTyres platform. These updates include the implementation of advanced filters, a new gallery section with the ability to search and explore different products, and connecting the inventory system for real-time stock management. Additionally, we are enhancing the payment options to offer customers a more seamless and flexible checkout experience. These improvements aim to optimise the platform's functionality and user experience, ensuring it meets the growing needs of our customers.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">OpenCart</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">cPanel</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://ityres.net.au/" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer id="footer"></footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Project cards flip functionality
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+
+        // Header and Footer loading with mobile menu functionality
+        function loadHeader() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const header = doc.querySelector("header");
+                    document.querySelector("#navbar").innerHTML = header.innerHTML;
+
+                    // Initialize mobile menu after header is loaded
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navList = document.querySelector('.desktop-bar ul');
+
+                    if (menuToggle && navList) {
+                        menuToggle.addEventListener('click', function() {
+                            this.classList.toggle('active');
+                            navList.classList.toggle('active');
+                        });
+
+                        document.querySelectorAll('.desktop-bar a').forEach(link => {
+                            link.addEventListener('click', () => {
+                                menuToggle.classList.remove('active');
+                                navList.classList.remove('active');
+                            });
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+
+        function loadFooter() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const footer = doc.querySelector("footer");
+                    document.querySelector("#footer").innerHTML = footer.innerHTML;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+
+        // Load header and footer
+        loadHeader();
+        loadFooter();
+    });
 </script>
+
 </body>
