@@ -32,45 +32,125 @@
 
     <footer id="footer"></footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function loadHeader() {
-                fetch("./header-footer.html")
-                    .then(response => response.text())
-                    .then(data => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(data, "text/html");
-                        const header = doc.querySelector("header");
-                        document.querySelector("#navbar").innerHTML = header.innerHTML;
-                        
-                        // Initialize mobile menu AFTER header is loaded
-                        const menuToggle = document.querySelector('.menu-toggle');
-                        const navList = document.querySelector('.desktop-bar ul');
-
-                        if (menuToggle && navList) {
-                            menuToggle.addEventListener('click', function() {
-                                console.log('Toggle clicked!'); // Debug line
-                                this.classList.toggle('active');
-                                navList.classList.toggle('active');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. First define the tech words array
+        const words = [
+            'Python', 'Django', 'React', 'HTML', 'CSS', 'JavaScript',
+            'MySQL', 'Git','REST API'
+        ];
+        
+        // 2. Load your header and footer
+        loadHeader();
+        loadFooter();
+        
+        // 3. Initialize the tech background if it exists on the current page
+        const techBackground = document.getElementById('techBackground');
+        if (techBackground) {
+            createStaticBackground(techBackground);
+            
+            // Recreate the background if window is resized
+            window.addEventListener('resize', function() {
+                createStaticBackground(techBackground);
+            });
+        }
+        
+        // 4. Define your functions
+        function loadHeader() {
+            fetch("./header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const header = doc.querySelector("header");
+                    document.querySelector("#navbar").innerHTML = header.innerHTML;
+                    
+                    // Initialize mobile menu AFTER header is loaded
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navList = document.querySelector('.desktop-bar ul');
+    
+                    if (menuToggle && navList) {
+                        menuToggle.addEventListener('click', function() {
+                            console.log('Toggle clicked!'); // Debug line
+                            this.classList.toggle('active');
+                            navList.classList.toggle('active');
+                        });
+    
+                        document.querySelectorAll('.desktop-bar a').forEach(link => {
+                            link.addEventListener('click', () => {
+                                menuToggle.classList.remove('active');
+                                navList.classList.remove('active');
                             });
-
-                            document.querySelectorAll('.desktop-bar a').forEach(link => {
-                                link.addEventListener('click', () => {
-                                    menuToggle.classList.remove('active');
-                                    navList.classList.remove('active');
-                                });
-                            });
-                        } else {
-                            console.error('Menu elements not found!'); // Debug line
-                        }
-                    })
-                    .catch(error => console.error('Error loading header:', error));
+                        });
+                    } else {
+                        console.error('Menu elements not found!'); // Debug line
+                    }
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+        
+        function loadFooter() {
+            fetch("./header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const footer = doc.querySelector("footer");
+                    document.querySelector("#footer").innerHTML = footer.innerHTML;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+        
+        function createStaticBackground(container) {
+            container.innerHTML = '';
+            
+            // Improved grid system with better spacing
+            const gridSize = 12; // Fewer cells = more space between words
+            const usedPositions = new Set();
+            
+            // Create fewer words to avoid crowding
+            for (let i = 0; i < 24; i++) {
+                const word = document.createElement('div');
+                word.className = 'tech-word';
+                word.textContent = words[Math.floor(Math.random() * words.length)];
+                
+                // Find unused position
+                let gridX, gridY;
+                let attempts = 0;
+                let positionKey;
+                
+                do {
+                    gridX = Math.floor(Math.random() * gridSize);
+                    gridY = Math.floor(Math.random() * gridSize);
+                    positionKey = `${gridX},${gridY}`;
+                    attempts++;
+                    
+                    // Break the loop if we can't find an unused position after many attempts
+                    if (attempts > 50) break;
+                } while (usedPositions.has(positionKey));
+                
+                // Mark this position as used
+                usedPositions.add(positionKey);
+                
+                // Add randomness within the grid cell for more natural look
+                const offsetX = Math.random() * 4 - 2; // -2% to +2% random offset
+                const offsetY = Math.random() * 4 - 2;
+                
+                // Position word with margin to avoid edge touching
+                word.style.left = ((gridX * (100/gridSize)) + offsetX) + '%';
+                word.style.top = ((gridY * (100/gridSize)) + offsetY) + '%';
+                
+                // Slightly varied sizes
+                word.style.fontSize = (Math.random() * 12 + 14) + 'px';
+                
+                // Random animation delay
+                word.style.animationDelay = (Math.random() * 8) + 's';
+                
+                container.appendChild(word);
             }
-
-            loadHeader();
-            loadFooter();
-        });
-    </script>
+        }
+    });
+</script>
     
 </body>
 </html>
