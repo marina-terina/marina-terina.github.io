@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="navbar"></header>
-
     <section class="hero">
         <div class="tech-background" id="techBackground"></div>
         
         <div class="hero-content">
             <h1>Hi, I am Marina!</h1>
             <p>Junior Web Developer</p>
-            <p>Thank you for visiting my page</p>
+            <p>Welcome to my page</p>
+            <p>Say 'Hi' to get to know me better 😊</p>
         </div>
 
         <div class="cube-container">
@@ -30,65 +29,22 @@
         <a href="./journey.html" class="btn-primary">Hi</a>
     </section>
 
-    <footer id="footer"></footer>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 1. First define the tech words array
         const words = [
             'Python', 'Django', 'React', 'HTML', 'CSS', 'JavaScript',
             'MySQL', 'Git','REST API'
         ];
         
-        // 2. Load your header and footer
-        loadHeader();
-        loadFooter();
-        
-        // 3. Initialize the tech background if it exists on the current page
         const techBackground = document.getElementById('techBackground');
         if (techBackground) {
             createStaticBackground(techBackground);
             
-            // Recreate the background if window is resized
             window.addEventListener('resize', function() {
                 createStaticBackground(techBackground);
             });
         }
-        
-        // 4. Define your functions
-        function loadHeader() {
-            fetch("./header-footer.html")
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, "text/html");
-                    const header = doc.querySelector("header");
-                    document.querySelector("#navbar").innerHTML = header.innerHTML;
-                    
-                    // Initialize mobile menu AFTER header is loaded
-                    const menuToggle = document.querySelector('.menu-toggle');
-                    const navList = document.querySelector('.desktop-bar ul');
-    
-                    if (menuToggle && navList) {
-                        menuToggle.addEventListener('click', function() {
-                            console.log('Toggle clicked!'); // Debug line
-                            this.classList.toggle('active');
-                            navList.classList.toggle('active');
-                        });
-    
-                        document.querySelectorAll('.desktop-bar a').forEach(link => {
-                            link.addEventListener('click', () => {
-                                menuToggle.classList.remove('active');
-                                navList.classList.remove('active');
-                            });
-                        });
-                    } else {
-                        console.error('Menu elements not found!'); // Debug line
-                    }
-                })
-                .catch(error => console.error('Error loading header:', error));
-        }
-        
+
         function loadFooter() {
             fetch("./header-footer.html")
                 .then(response => response.text())
@@ -104,51 +60,96 @@
         function createStaticBackground(container) {
             container.innerHTML = '';
             
-            // Improved grid system with better spacing
-            const gridSize = 12; // Fewer cells = more space between words
+            // hero-content dimensions and position
+            const heroContent = document.querySelector('.hero-content');
+            const heroRect = heroContent.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            const heroTop = (heroRect.top / containerRect.height) * 100;
+            const heroBottom = (heroRect.bottom / containerRect.height) * 100;
+            const heroLeft = (heroRect.left / containerRect.width) * 100;
+            const heroRight = (heroRect.right / containerRect.width) * 100;
+            
+            const screenWidth = window.innerWidth;
+            const gridSize = screenWidth < 768 ? 12 : 24;
+            const wordCount = screenWidth < 768 ? 24 : 48;
             const usedPositions = new Set();
             
-            // Create fewer words to avoid crowding
-            for (let i = 0; i < 24; i++) {
+            for (let i = 0; i < wordCount; i++) {
                 const word = document.createElement('div');
                 word.className = 'tech-word';
                 word.textContent = words[Math.floor(Math.random() * words.length)];
                 
-                // Find unused position
                 let gridX, gridY;
                 let attempts = 0;
                 let positionKey;
+                let validPosition = false;
                 
                 do {
                     gridX = Math.floor(Math.random() * gridSize);
-                    gridY = Math.floor(Math.random() * gridSize);
+                    const randomValue = Math.random();
+                    
+                    let potentialX = (gridX * (100/gridSize));
+                    let potentialY;
+                    
+                    if (randomValue < 0.35) {
+                        // 35% chance - Top Area
+                        potentialY = Math.floor(Math.random() * (heroTop));
+                    } else if (randomValue < 0.50) {
+                        // 15% chance - Side Areas
+                        potentialY = Math.floor(heroTop + Math.random() * (heroBottom - heroTop));
+                        if (potentialX > heroLeft && potentialX < heroRight) {
+                            continue;
+                        }
+                    } else {
+                        // 50% chance - Bottom Area
+                        // Split bottom area into two sections 
+                        const bottomHalf = Math.random() < 0.5;
+                        if (bottomHalf) {
+                                potentialY = Math.floor(heroBottom + ((containerRect.height - heroBottom) / 2)) / containerRect.height * 100 
+                                + (Math.random() * 50);  
+                        } else {
+                            potentialY = Math.floor(heroBottom) / containerRect.height * 100 
+                                + (Math.random() * 25);  
+                        }
+                    }
+                    
+                    gridY = Math.floor((potentialY * gridSize) / 100);
                     positionKey = `${gridX},${gridY}`;
                     attempts++;
                     
-                    // Break the loop if we can't find an unused position after many attempts
+                    validPosition = !(
+                        potentialX > heroLeft - 3 && 
+                        potentialX < heroRight + 3 && 
+                        potentialY > heroTop - 3 && 
+                        potentialY < heroBottom + 3
+                    );
+                    
                     if (attempts > 50) break;
-                } while (usedPositions.has(positionKey));
+                } while (usedPositions.has(positionKey) || !validPosition);
                 
-                // Mark this position as used
                 usedPositions.add(positionKey);
                 
-                // Add randomness within the grid cell for more natural look
-                const offsetX = Math.random() * 4 - 2; // -2% to +2% random offset
-                const offsetY = Math.random() * 4 - 2;
+                const offsetX = Math.random() * 2 - 1;
+                const offsetY = Math.random() * 2 - 1;
                 
-                // Position word with margin to avoid edge touching
                 word.style.left = ((gridX * (100/gridSize)) + offsetX) + '%';
                 word.style.top = ((gridY * (100/gridSize)) + offsetY) + '%';
                 
-                // Slightly varied sizes
-                word.style.fontSize = (Math.random() * 12 + 14) + 'px';
+                const fontSize = screenWidth < 768 
+                    ? (Math.random() * 6 + 10)  
+                    : (Math.random() * 8 + 12); 
+                word.style.fontSize = fontSize + 'px';
                 
-                // Random animation delay
+                word.style.zIndex = '-1';
+                word.style.opacity = screenWidth < 768 ? '0.2' : '0.3';
+                
                 word.style.animationDelay = (Math.random() * 8) + 's';
                 
                 container.appendChild(word);
             }
         }
+
     });
 </script>
     

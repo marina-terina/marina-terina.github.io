@@ -9,7 +9,6 @@
 </head>
 <body>
     <header id="navbar"></header>
-
     <div class="portfolio-container">
         <div class="portfolio-intro">
             <h3>My Projects</h3>
@@ -44,8 +43,8 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">Live Demo</a>
-                            <a href="#" target="_blank" class="project-link">GitHub Repo</a>
+                            
+                            <!-- <a href="#" target="_blank" class="project-link">GitHub Repo</a> -->
                         </div>
                     </div>
                 </div>
@@ -190,7 +189,7 @@
             <div class="project-card">
                 <div class="project-front">
                     <img src="./images/iTyres.png" alt="iTyres screenshot" class="project-image">
-                    <div class="project-title">iTyres</div>
+                    <div class="project-title">iTyres (Full-Time Work Project)</div>
                     <div class="front-tech-tags">
                         <span class="tech-tag">OpenCart</span>
                         <span class="tech-tag">PHP</span>
@@ -199,7 +198,7 @@
                     </div>
                 </div>
                 <div class="project-back">
-                    <h3 class="back-title">iTyres</h3>
+                    <h3 class="back-title">iTyres (Full-Time Work Project) </h3>
                     <div class="project-details">
                         <h5>Project Goal</h5>
                         <p>iTyres is a well-established business focused on providing a seamless, user-friendly online shopping experience for tyres and automotive accessories. The goal of iTyres is to provide customers with a seamless, user-friendly online shopping experience for tyres and automotive accessories. The business aims to offer high-quality products, excellent customer service, and a smooth platform where users can easily browse, order, and have products delivered. By collaborating with web developers, the goal is to keep the platform running smoothly, ensure efficient management of the online store, and continuously enhance the user experience to drive growth and customer satisfaction.</p>
@@ -228,7 +227,6 @@
 <footer id="footer"></footer>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Project cards flip functionality
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -236,7 +234,6 @@
             });
         });
 
-        // Header and Footer loading with mobile menu functionality
         function loadHeader() {
             fetch("header-footer.html")
                 .then(response => response.text())
@@ -246,7 +243,6 @@
                     const header = doc.querySelector("header");
                     document.querySelector("#navbar").innerHTML = header.innerHTML;
 
-                    // Initialize mobile menu after header is loaded
                     const menuToggle = document.querySelector('.menu-toggle');
                     const navList = document.querySelector('.desktop-bar ul');
 
@@ -279,7 +275,6 @@
                 .catch(error => console.error('Error loading footer:', error));
         }
 
-        // Load header and footer
         loadHeader();
         loadFooter();
     });
